@@ -11,11 +11,11 @@ def main():
     link_list = []
     text = 'www.linkedin.com'
     
-    token = {"EAArrjXNkXF8BAM3iE137BQce9cpZBdveBuXHle8dwCz73ze7ZAKcZBBREbMBp490qgc8wnrA7KlVAsMqNI7MZBbmV6oGNYJeCqHubZArxDHfZCAsfgivo076khWAGigV5AjqVVHg9kJ0TEQZBINZBZA7FWWlKHVgjs7xZAky4x6HZBRtNtgZBjetTgt46YX3EeNoxYgZD"}   #Enter access token between quotation marks
+    token = {"insert access token"}   #Enter access token between quotation marks
     graph = facebook.GraphAPI(token)
     fields = ['feed{link}']
     
-    profile = graph.get_object('240457820553682', fields = fields) #Enter group id between tick marks
+    profile = graph.get_object('insert group id', fields = fields) #Enter group id between tick marks
     results = json.dumps(profile)
     #print(json.dumps(profile, indent = 4))
     parse = json.loads(results)
@@ -38,7 +38,7 @@ def main():
                 link_list.append(fil)
         #print(link_list)
         
-        browser = webdriver.Chrome('C:/Users/Ron/Downloads/chromedriver.exe')
+        browser = webdriver.Chrome('folder_path/chromedriver.exe')
         browser.get('https://www.linkedin.com/uas/login') #open chrome to linkedin website
         
         file = open('config.txt')   #open file containing login credentials
